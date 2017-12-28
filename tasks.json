@@ -1,0 +1,32 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "SourcePawn Compile",
+            "type": "shell",
+            "command": "C:\\Games\\SteamDS\\Byte\\CSGO\\addons\\sourcemod\\scripting\\spcomp.exe",
+            "args": [
+                "'${file}'",
+                "-i=C:\\Games\\SteamDS\\Byte\\CSGO\\addons\\sourcemod\\scripting\\include",
+                "-D=C:\\Games\\SteamDS\\Byte\\CSGO\\addons\\sourcemod\\scripting\\compiled",
+            ],
+            "problemMatcher": {
+                "owner": "sp",
+                "fileLocation": "absolute",
+                "pattern": {
+                    "regexp": "^(.*)\\((.+)\\)\\s:\\s(((warning|error|fatal error)\\s\\d+):\\s.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "severity": 5,
+                    "message": 3
+                }
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
