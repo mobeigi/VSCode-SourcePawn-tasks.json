@@ -6,11 +6,11 @@
         {
             "label": "SourcePawn Compile",
             "type": "shell",
-            "command": "C:\\Games\\SteamDS\\Byte\\CSGO\\addons\\sourcemod\\scripting\\spcomp.exe",
+            "command": "%SOURCEMOD_SCRIPTING%\\spcomp.exe",
             "args": [
-                "'${file}'",
-                "-i=C:\\Games\\SteamDS\\Byte\\CSGO\\addons\\sourcemod\\scripting\\include",
-                "-D=C:\\Games\\SteamDS\\Byte\\CSGO\\addons\\sourcemod\\scripting\\compiled",
+                "${file}",
+                "-i=%SOURCEMOD_INCLUDES%",
+                "-D=%SOURCEMOD_COMPILED%",
             ],
             "problemMatcher": {
                 "owner": "sp",
